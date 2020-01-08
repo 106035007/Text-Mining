@@ -215,7 +215,3 @@ ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
 
 
 
-
-
-
-

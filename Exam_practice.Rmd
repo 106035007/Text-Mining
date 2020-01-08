@@ -1,0 +1,54 @@
+---
+title: ": Exam Practice"
+author: "Shyh-Weir Tzang"
+date:   "2019/12/12"
+output: 
+    html_document:
+        toc: TRUE
+        theme: flatly
+        highlight: tango
+        code_folding: show
+        df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questions:
+## 1. Use package `tidyquant`, `timetk` and download data from TEJ listed common stocks prices from 2017-2018.
+
+## 2. Select "CO_ID", "Co_Name", "Date", "Close", "Market Cap", and rename to be "id", "name", "date", "cl", "cap".
+
+## 3. Select "id"", "date", "price", change their data type to character, date and numeric. Also change to wide data by using `spread()`.
+
+## 4. Find stock ids with `NA` and count their`NA`s。
+
+## 5. Replace `NA` with the most recent values.
+
+## 6. Find any stocks still with `NA` values and delete them from data. 
+
+## 7. Calculate daily returns using log.
+
+## 8. Calculate monthly returns.
+
+## 9. Find the 20 companies with the largest market cap for 2017 and 2018. Also calculate their market share percentage in 20 companies.
+
+## 10. Plot their market shares using bar chart in descending order.
+
+## 11. By Q7, select year 2018 returns and convert to long data using `gather()`.
+
+## 12. By Q9, find 20 companies daily returns in 2018.
+
+## 13. By Q12, find 20 companies monthly returns in 2018.
+
+
+
+
+
+
+
+
+
+
+
