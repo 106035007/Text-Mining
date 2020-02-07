@@ -12,7 +12,7 @@ suffix <- 2:14
 url_all <- paste(paste('https://ideas.repec.org/s/eee/moneco.html', suffix, sep=""), '.html', sep="")
 url_all <- c(url, url_all)
 #
-i = url
+i = url_all[1]
 url.list <- list()
 abstract.list <- list()
 for (i in url_all){

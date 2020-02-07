@@ -1,6 +1,9 @@
 rm(list=ls())
 
+library(tm)
+library(tidytext)
 library(tidyverse)
+library(dplyr)
 library(xml2)
 library(rvest)
 library(stringr)
@@ -81,5 +84,31 @@ author <- function(url){
 author_all <- url_paper_complete %>% sapply(., function(x) author(x))
 length(author_all)
 author_all %>% coredata(author_i)
+
+
+
+
+p1 = data.frame((sapply(abstract.list[[1]], c)), stringsAsFactors = FALSE)
+colnames(p1) = 'abs_text'
+
+data("stop_words")
+stop_words = stop_words %>% add_row(., word = c("abstract"),
+                                    lexicon = rep('mine', 2))
+tidy_abstract = p1 %>% as_tibble() %>% unnest_tokens("word", abs_text) %>% 
+                anti_join(stop_words)
+tidy_abstract = tidy_abstract %>% 
+                .[-grep("\\b\\d+\\b", .$word), ]
+
+
+p2 = data.frame((sapply(author.list[[1]], c)), stringsAsFactors = FALSE)
+colnames(p1) = 'abs_text'
+
+data("stop_words")
+stop_words = stop_words %>% add_row(., word = c("author"),
+                                    lexicon = rep('mine', 2))
+tidy_author = p1 %>% as_tibble() %>% unnest_tokens("word", abs_text) %>% 
+              anti_join(stop_words)
+tidy_author = tidy_author %>% 
+             .[-grep("\\b\\d+\\b", .$word), ]
 
 
