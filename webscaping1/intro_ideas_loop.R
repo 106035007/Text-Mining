@@ -1,11 +1,11 @@
 # https://www.freecodecamp.org/news/an-introduction-to-web-scraping-using-r-40284110c848/
 rm(list=ls())
 
-# install.packages('selectr')
-# install.packages('xml2')
-# install.packages('rvest')
-# install.packages('stringr')
-# install.packages('jsonlite')
+ install.packages('selectr')
+ install.packages('xml2')
+ install.packages('rvest')
+ install.packages('stringr')
+ install.packages('jsonlite')
 library(tidyverse)
 library(xml2)
 library(rvest)
