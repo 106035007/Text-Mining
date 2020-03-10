@@ -16,6 +16,7 @@ library(rvest)
 library(stringr)
 library(selectr)
 library(xts)
+library(tidytext)
 
 url <- 'https://ideas.repec.org/s/eee/moneco.html'
 suffix <- 2:14
@@ -138,4 +139,11 @@ wordcloud(words = tdm.df$word, freq = tdm.df$freq, min.freq = 20,
           max.words=200, random.order=FALSE, rot.per=0.35,
           colors=brewer.pal(8, "Dark2"))
 
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_stop_words.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_tdm.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_tdm.df.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_matrix.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jfme_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")
 

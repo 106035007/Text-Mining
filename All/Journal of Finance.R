@@ -5,17 +5,18 @@
 
 rm(list=ls())
 
-# install.packages('selectr')
-# install.packages('xml2')
-# install.packages('rvest')
-# install.packages('stringr')
-# install.packages('jsonlite')
+ install.packages('selectr')
+ install.packages('xml2')
+ install.packages('rvest')
+ install.packages('stringr')
+ install.packages('jsonlite')
 library(tidyverse)
 library(xml2)
 library(rvest)
 library(stringr)
 library(selectr)
 library(xts)
+library(tidytext)
 
 url <- 'https://ideas.repec.org/s/bla/jfinan.html'
 suffix <- 2:29
@@ -138,4 +139,11 @@ wordcloud(words = tdm.df$word, freq = tdm.df$freq, min.freq = 20,
           max.words=200, random.order=FALSE, rot.per=0.35,
           colors=brewer.pal(8, "Dark2"))
 
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_stop_words.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.df.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_matrix.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")
 
