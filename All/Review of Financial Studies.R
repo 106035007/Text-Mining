@@ -19,7 +19,7 @@ library(xts)
 library(tidytext)
 
 url <- 'https://ideas.repec.org/s/oup/rfinst.html'
-suffix <- 2:10
+suffix <- 2:11
 url_all <- paste(paste('https://ideas.repec.org/s/oup/rfinst.html', suffix, sep=""), '.html', sep="")
 url_all <- c(url, url_all)
 # i is page 1:10 on the web
@@ -140,9 +140,9 @@ wordcloud(words = tdm.df$word, freq = tdm.df$freq, min.freq = 20,
           colors=brewer.pal(8, "Dark2"))
 
 write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_stop_words.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tdm.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tdm.df.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_matrix.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")
+write.table(stop_words, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_stop_words.csv", sep = ",", row.names = F, na = "NA")
+write.table(tdm, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tdm.csv", sep = ",", row.names = F, na = "NA")
+write.table(tdm.df, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tdm.df.csv", sep = ",", row.names = F, na = "NA")
+write.table(tdm.matrix, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_matrix.csv", sep = ",", row.names = F, na = "NA")
+write.table(tidy_abstract, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
+write.table(tidy_abstract_count, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\rfs_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")

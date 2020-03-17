@@ -139,11 +139,11 @@ wordcloud(words = tdm.df$word, freq = tdm.df$freq, min.freq = 20,
           max.words=200, random.order=FALSE, rot.per=0.35,
           colors=brewer.pal(8, "Dark2"))
 
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_stop_words.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.df.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_matrix.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
-write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")
-
+#write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf.csv", sep = ",", row.names = F, na = "NA")
+write.table(stop_words, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_stop_words.csv", sep = ",", row.names = F, na = "NA")
+#write.table(tdm, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.csv", sep = ",", row.names = F, na = "NA")
+write.table(tdm.df, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tdm.df.csv", sep = ",", row.names = F, na = "NA")
+write.table(tdm.matrix, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_matrix.csv", sep = ",", row.names = F, na = "NA")
+write.table(tidy_abstract, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract.csv", sep = ",", row.names = F, na = "NA")
+write.table(tidy_abstract_count, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf_tidy_abstract_count.csv", sep = ",", row.names = F, na = "NA")
+write.table(p1, file = "C:\\Users\\Sarah\\Desktop\\Text Mining\\Text-Mining\\jf.csv", sep = ",", row.names = T, na = "NA")
